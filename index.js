@@ -1,11 +1,18 @@
 let myLibrary = []; 
 
 const addButton = document.getElementById('addButton');
-const form = document.createElement('form');
+const closeFormButton = document.getElementById('closeForm');
+ 
+
 
 //add button that is gonna handle form using addNewBook 
 addButton.addEventListener('click' , function() {
-    displayTest()
+  openForm()
+});
+
+//close forum by pressing close
+closeFormButton.addEventListener('click', function(){
+    closeForm()
 });
 
 //Book Constructor
@@ -35,9 +42,19 @@ function displayBooks(){
   
 }
 
-function displayTest(){
-    return console.log('tessting');
+//open forum
+function openForm(){
+    document.getElementById('myForm').style.display = 'block';
 }
+
+//close forum
+function closeForm(){
+    document.getElementById('myForm').style.display = 'none';
+}
+
+
+
+
 
 
 

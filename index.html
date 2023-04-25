@@ -14,6 +14,21 @@
     <article><blockquote class="message">“Please, no matter how we advance technologically, please don’t abandon the book. There is nothing in our material world more beautiful than the book.”― Patti Smith</blockquote></article>
     <article><button id="addButton">+</button></article>
     <div class="cardContainer">
+        <div id="myForm" class="popupFormContainer">
+            <form action="" display="none">
+               <img id="closeForm" src="./assets/close-icon-13584 (1).png" alt="X" width="50px">
+                <label for="author">Author</label>
+                <input type="text" placeholder="Author name" name="author" required>
+                <label for="title">Title</label>
+                <input type="text" placeholder="Book Title" name="title" required>
+                <label for="pages"># of pages</label>
+                <input type="number" name="pages" required>
+                <label for="bookRead">Read?</label>
+                <input type="checkbox" default="false" name="bookRead" required>
+                <button>Add Book</button>
+            </form>
+
+        </div>
 
     </div>
    </main>

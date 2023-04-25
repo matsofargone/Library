@@ -1,5 +1,6 @@
 body {
     background-color: #e5eaf5;
+    border-radius: border-box;
 }
 
 h1 {
@@ -44,5 +45,72 @@ header h1 {
     font-size: 18px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
+
+  .popupFormContainer {
+    background: radial-gradient(circle, rgba(238,174,202,1) 62%, rgba(148,187,233,1) 86%);
+    color: white;
+    padding: 40px 40px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    min-height: 350px;
+    width: 20%;
+    display: none;
+    
+    
+  }
+
+
+.popupFormContainer input[type=text], .popupFormContainer input[type=number], .popupFormContainer input[type=checkbox] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  align-self: center;
+}
+
+.popupFormContainer button {
+  background-color: #b40ddd;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 60%;
+  margin-bottom:10px;
+  opacity: 0.8;
+  height: 20%;
+  align-self: center;
+}
+
+.popupFormContainer button:hover {
+  opacity: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.popupFormContainer label {
+  align-items: flex-start;
+}
+
+.popupFormContainer input[type=checkbox] {
+   
+}
+
+.popupFormContainer img {
+  align-self: flex-end;
+  padding-bottom: 15px;
+  top: 0;
+  position: relative;
+}
+
+.popupFormContainer img:hover {
+  transform: scale(1.2);
+}
   
  
