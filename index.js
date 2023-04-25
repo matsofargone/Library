@@ -2,17 +2,28 @@ let myLibrary = [];
 
 const addButton = document.getElementById('addButton');
 const closeFormButton = document.getElementById('closeForm');
+const addBookButton = document.getElementById('addBook');
+
  
 
 
 //add button that is gonna handle form using addNewBook 
 addButton.addEventListener('click' , function() {
   openForm()
+  hideAddbutton()
 });
 
 //close forum by pressing close
 closeFormButton.addEventListener('click', function(){
     closeForm()
+    showAddbutton()
+});
+
+//Add Book to Library
+addBookButton.addEventListener('click', function(){
+    console.log('Book added')
+    closeForm()
+    showAddbutton()
 });
 
 //Book Constructor
@@ -50,6 +61,18 @@ function openForm(){
 //close forum
 function closeForm(){
     document.getElementById('myForm').style.display = 'none';
+}
+
+//hides add button 
+function hideAddbutton(){
+    addButton.style.display = 'none';
+}
+
+//shows button above form 
+function showAddbutton(){
+    
+    addButton.style.display = '';
+    
 }
 
 

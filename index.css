@@ -36,9 +36,9 @@ header h1 {
     width: 50px;
   }
   button:hover{
-    background:#fff;
     color: black;
     cursor: pointer;
+    transform: scale(1.2);
   }
 
   .message {
@@ -57,6 +57,8 @@ header h1 {
     min-height: 350px;
     width: 20%;
     display: none;
+    right: 625px;
+    
     
     
   }
@@ -69,6 +71,11 @@ header h1 {
   border: none;
   background: #f1f1f1;
   align-self: center;
+}
+
+.popupFormContainer input[type=text]:focus, .popupFormContainer input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
 }
 
 .popupFormContainer button {
@@ -86,6 +93,7 @@ header h1 {
 
 .popupFormContainer button:hover {
   opacity: 1;
+  transform: scale(1.2);
 }
 
 form {
