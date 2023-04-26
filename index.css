@@ -106,9 +106,9 @@ form {
   align-items: flex-start;
 }
 
-.popupFormContainer input[type=checkbox] {
+/* .popupFormContainer input[type=checkbox] {
    
-}
+} */
 
 .popupFormContainer img {
   align-self: flex-end;
@@ -121,4 +121,31 @@ form {
   transform: scale(1.2);
 }
   
+
+.cardList {
+  justify-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+  gap: 50px;
+  width: 100vw;
  
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 10%;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 10px 10px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+
