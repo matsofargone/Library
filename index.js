@@ -3,8 +3,15 @@ let myLibrary = [];
 const addButton = document.getElementById('addButton');
 const closeFormButton = document.getElementById('closeForm');
 const addBookButton = document.getElementById('addBook');
+// const defaultForm = document.getElementById('myForm');
+const form = document.querySelector('form');
 
  
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    addBookToLibrary();
+    closeForm();
+})
 
 
 //add button that is gonna handle form using addNewBook 
@@ -19,12 +26,7 @@ closeFormButton.addEventListener('click', function(){
     showAddbutton()
 });
 
-//Add Book to Library
-addBookButton.addEventListener('click', function(){
-    console.log('Book added')
-    closeForm()
-    showAddbutton()
-});
+
 
 //Book Constructor
 function Book(title, author, pages, read){
@@ -40,27 +42,42 @@ function Book(title, author, pages, read){
 }
 
 function addBookToLibrary(){
-    //code here 
-    // takes user input 
-    //prompt when user selects add button 
+    //code here
+      // takes user input 
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+    const pages = document.querySelector('#pages').value;
+    const read = document.querySelector('#read').value;
+    //create object
+    const entry = Object.create(Book);
+    entry.title = title;
+    entry.author = author;
+    entry.pages = pages;
+    entry.read = read;
+   
+    
     //store users input into an array 
-    myLibrary.push();
+    myLibrary.push(entry);
+
+    console.log(myLibrary);
 
 }
 
 function displayBooks(){
     //code here 
-  
+    myLibrary.forEach((book) =>{
+
+    });
 }
 
 //open forum
 function openForm(){
-    document.getElementById('myForm').style.display = 'block';
+    form.style.display = 'flex';
 }
 
 //close forum
 function closeForm(){
-    document.getElementById('myForm').style.display = 'none';
+    form.style.display = 'none';
 }
 
 //hides add button 
