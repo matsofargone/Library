@@ -46,7 +46,7 @@ function addBookToLibrary(){
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
     const pages = document.querySelector('#pages').value;
-    const read = document.querySelector('#read').value;
+    const read = document.querySelector('#read').checked;
     //create object
     const entry = new Book(title, author, pages, read);
     
@@ -72,12 +72,6 @@ function displayBooks(){
     }
 
     myLibrary.forEach((book, index) =>{
-
-      
-        console.log('title:', book.title);
-        console.log('author:', book.author);
-        console.log('pages:', book.pages);
-        console.log('checkbox', book.checkbox);
         
         
         const card =  document.createElement('div');
@@ -85,7 +79,7 @@ function displayBooks(){
         
         card.dataset.index = index;
         
-        console.log(index);
+        
 
         const title = document.createElement('h4');
         title.textContent = book.title;
@@ -103,9 +97,20 @@ function displayBooks(){
             book.read = checkbox.checked;
           });
 
+        // const checkbox = document.createElement('button');
+        // if (book.checkbox.checked == 'true'){
+        //     checkbox.classList.add('.on');
+        // } else {
+        //     checkbox.classList.add('.off');
+        // }
+
         const remove = document.createElement('input');
         remove.type = 'button';
-        remove.onclick = myLibrary.pop(book);
+        remove.value = 'Read';
+        remove.addEventListener('click', function() {
+         removeEntry(index);
+        });
+        
 
         card.appendChild(title);
         card.appendChild(author);
@@ -113,12 +118,7 @@ function displayBooks(){
         card.appendChild(checkbox);
         card.appendChild(remove);
         
-          
-        
-
-       
-        
-       cardlist.appendChild(card);
+        cardlist.appendChild(card);
        
     });
 }
@@ -143,6 +143,11 @@ function showAddbutton(){
     
     addButton.style.display = '';
     
+}
+
+function removeEntry(index) {
+    myLibrary.splice(index, 1);
+    displayBooks();
 }
 
 
