@@ -1,4 +1,19 @@
-let myLibrary = []; 
+//Book Constructor
+function Book(title, author, pages, read){
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+    
+
+}
+
+const placeHolder = new Book('Harry pothead and the fire weed', 'J.K Rolling', 420, false);
+let myLibrary = [placeHolder]; 
+
+window.addEventListener('load', function() {
+    displayBooks();
+})
 
 const addButton = document.getElementById('addButton');
 const closeFormButton = document.getElementById('closeForm');
@@ -31,15 +46,7 @@ closeFormButton.addEventListener('click', function(){
 
 
 
-//Book Constructor
-function Book(title, author, pages, read){
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    
 
-}
 
 function addBookToLibrary(){
       // takes user input 
@@ -90,23 +97,38 @@ function displayBooks(){
         const pages = document.createElement('p');
         pages.textContent = book.pages;
 
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.checked = book.read;
-        checkbox.addEventListener('change', () => {
-            book.read = checkbox.checked;
-          });
+        // const checkbox = document.createElement('input');
+        // checkbox.type = 'checkbox';
+        // checkbox.checked = book.read;
+        // checkbox.addEventListener('change', () => {
+        //     book.read = checkbox.checked;
+        //   });
 
-        // const checkbox = document.createElement('button');
-        // if (book.checkbox.checked == 'true'){
-        //     checkbox.classList.add('.on');
-        // } else {
-        //     checkbox.classList.add('.off');
-        // }
+        const checkbox = document.createElement('button');
+        checkbox.value = book.read;
+        if (checkbox.value == 'true'){
+            checkbox.textContent = 'Read';
+            checkbox.classList.add('read')
 
-        const remove = document.createElement('input');
-        remove.type = 'button';
-        remove.value = 'Read';
+        } else {
+            checkbox.textContent = 'Not Read';
+            checkbox.classList.add('not-read');
+        }
+        
+
+        checkbox.addEventListener('click', function(){
+          toggleButton(checkbox);
+        });
+        
+
+        const remove = document.createElement("img");
+        
+        remove.src = "./assets/transparent-x-mark-11.png";
+        remove.width = 50;
+        remove.addEventListener('load', function(){
+            
+            remove.classList.add('remove');
+        });
         remove.addEventListener('click', function() {
          removeEntry(index);
         });
@@ -119,7 +141,7 @@ function displayBooks(){
         card.appendChild(remove);
         
         cardlist.appendChild(card);
-       
+      
     });
 }
 
@@ -128,7 +150,7 @@ function openForm(){
     form.style.display = 'flex';
 }
 
-//close forum
+//close forum 
 function closeForm(){
     form.style.display = 'none';
 }
@@ -149,6 +171,23 @@ function removeEntry(index) {
     myLibrary.splice(index, 1);
     displayBooks();
 }
+
+function toggleButton(checkbox) {
+    if (checkbox.classList.value == 'read'){
+        checkbox.value = 'false';
+        checkbox.textContent = 'Not Read';
+        checkbox.classList.remove('read');
+        checkbox.classList.add('not-read');
+        
+     } else if(checkbox.classList.value == 'not-read') {
+         checkbox.value = 'true';
+         checkbox.classList.remove('not-read');
+         checkbox.classList.add('read');
+         checkbox.textContent = 'Read';
+         
+     }
+}
+
 
 
 

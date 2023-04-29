@@ -9,75 +9,43 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+   
+    
+
+
+
+
    <header><h1 class="four">Mybrary</h1></header>
    <main>
-    <article><blockquote class="message">“Please, no matter how we advance technologically, please don’t abandon the book. There is nothing in our material world more beautiful than the book.”― Patti Smith</blockquote></article>
+    <article><blockquote class="message">“Please, no matter how we advance technologically, please don't abandon the book. There is nothing in our material world more beautiful than the book.”― Patti Smith</blockquote></article>
     <article><button id="addButton">+</button></article>
-    <div class="cardList">
-        <div class="card">
-            <div class="cardContainer">
-                <h4>Title</h4>
-                <h5>Author</h5>
-                <p>page numbers</p>
-                <input type="checkbox" name="read" id="read">
-            </div>
-        </div>
+   
 
-        <div class="card">
-            <div class="cardContainer">
-                <h4>Title</h4>
-                <h5>Author</h5>
-                <p>page numbers</p>
-                <input type="checkbox" name="read" id="read">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardContainer">
-                <h4>Title</h4>
-                <h5>Author</h5>
-                <p>page numbers</p>
-                <input type="checkbox" name="read" id="read">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardContainer">
-                <h4>Title</h4>
-                <h5>Author</h5>
-                <p>page numbers</p>
-                <input type="checkbox" name="read" id="read">
-            </div>
-        </div>
-
+    <form class="popupFormContainer" action="" display="none">
+        <img id="closeForm" src="./assets/close-icon-13584 (1).png" alt="X" width="50px">
+        <label for="title">Title</label>
+        <input type="text" placeholder="Book Title" name="title" id="title" required>
+         <label for="author">Author name</label>
+         <input type="text" placeholder="Author name" name="authorname" id="author" required>
         
-
-        
-
-        
-        <!-- end of added cards -->
-
-
+         <label for="pages"># of pages</label>
+         <input type="number" name="pages" id="pages" required>
+         <label id="read-label" for="bookRead">Read?</label>
+         <input type="checkbox" default="false" name="bookRead" id="read">
+         <button id="addBook">Add Book</button>
+     </form>
+    
+    
+    
+    <div class="cardList" id="cards">
        
+        
+        
 
+         
+        
        
-
-
-        <div id="myForm" class="popupFormContainer">
-            <form action="" display="none">
-               <img id="closeForm" src="./assets/close-icon-13584 (1).png" alt="X" width="50px">
-                <label for="author">Author</label>
-                <input type="text" placeholder="Author name" name="author" required>
-                <label for="title">Title</label>
-                <input type="text" placeholder="Book Title" name="title" required>
-                <label for="pages"># of pages</label>
-                <input type="number" name="pages" required>
-                <label for="bookRead">Read?</label>
-                <input type="checkbox" default="false" name="bookRead" required>
-                <button id="addBook">Add Book</button>
-            </form>
-
-        </div>
 
     </div>
    </main>
