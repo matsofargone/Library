@@ -9,7 +9,7 @@ function Book(title, author, pages, read){
 }
 
 const placeHolder = new Book('Harry pothead and the fire weed', 'J.K Rolling', 420, false);
-let myLibrary = [placeHolder]; 
+let myLibrary = []; 
 
 window.addEventListener('load', function() {
     displayBooks();
